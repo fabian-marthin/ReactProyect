@@ -2,10 +2,9 @@ function TareaItem(props){
     return(
       <li className="item">
         <span 
-          onClick={(event)=>{
-            props.accionTarea()
-          }}
+          onClick={ props.checkItems() }  
           className={`checkV ${props.completado && "iconoCheck"}`
+            
         }>
             V
         </span>
@@ -17,6 +16,7 @@ function TareaItem(props){
         </p>
 
         <span 
+          onClick={ props.deleteItem() }  
           className="checkX"
         >
           X

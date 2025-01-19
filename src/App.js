@@ -17,7 +17,6 @@ const cuentaItems = [
 
 function App() {
   const [items, setItems] = React.useState(cuentaItems);
-  console.log(items)
 
   const itemsCompletados = items.filter(element=>
     element.completado
@@ -26,13 +25,40 @@ function App() {
   const accionTarea = () => {
     console.log("hola");
   }
-  
-
-
 
   const [valorFiltro, setValorFiltro ] = React.useState("");
-  console.log(valorFiltro);
 
+  const buscadorItems = items.filter((item) => {
+    const itemText = item.texto.toLocaleLowerCase();
+    const buscarFiltro = valorFiltro.toLocaleLowerCase();
+    return itemText.includes(buscarFiltro);
+  })
+
+  const checkItems = (texto)=> {
+    const newItems = [...items];
+    const itemIndex = newItems.findIndex(
+      (item)=>item.texto === texto
+    );
+
+    switch (newItems[itemIndex].completado) {
+      case false:
+        newItems[itemIndex].completado = true;
+      break;
+      case true:
+        newItems[itemIndex].completado = false;
+      break;
+    }
+    setItems(newItems);
+  }
+
+  const deleteItem = (texto) =>{
+    const newItems = [...items];
+    const itemIndex = newItems.findIndex(
+      (item)=>item.texto === texto
+    );
+    newItems.splice(itemIndex, 1);
+    setItems(newItems);
+  }
 
   return (
     <React.Fragment>
@@ -47,11 +73,13 @@ function App() {
       />
 
       <Lista>
-        {items.map(item => (
+        {buscadorItems.map(item => (
           <TareaItem key={item.texto}
             texto={item.texto}
             completado={item.completado}
             accionTarea={accionTarea}
+             checkItems={() => checkItems(item.texto)}
+            deleteItem={() => deleteItem(item.texto)} 
           />
         ))}
        

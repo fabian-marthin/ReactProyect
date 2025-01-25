@@ -11,8 +11,8 @@ function Filtro(props){
                 value={props.valorFiltro}
                 onChange={(event)=>{
                     props.setValorFiltro(event.target.value);
-            }}>
-            </input>
+                }}
+            />
         </div>
         
     )

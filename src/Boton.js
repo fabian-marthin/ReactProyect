@@ -1,9 +1,7 @@
-function Boton () {
+function Boton (props) {
     return(
         <button 
-            onClick={(event)=>{
-                console.log("holaaa")
-            }}
+            onClick={() => props.agregar()}
             className="boton"
         >
             +

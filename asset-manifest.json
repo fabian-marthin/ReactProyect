@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fabian-marthin/ReactProyect/static/css/main.05b8789d.css",
+    "main.js": "/fabian-marthin/ReactProyect/static/js/main.b2044d0e.js",
+    "static/js/488.07383ccf.chunk.js": "/fabian-marthin/ReactProyect/static/js/488.07383ccf.chunk.js",
+    "index.html": "/fabian-marthin/ReactProyect/index.html",
+    "main.05b8789d.css.map": "/fabian-marthin/ReactProyect/static/css/main.05b8789d.css.map",
+    "main.b2044d0e.js.map": "/fabian-marthin/ReactProyect/static/js/main.b2044d0e.js.map",
+    "488.07383ccf.chunk.js.map": "/fabian-marthin/ReactProyect/static/js/488.07383ccf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05b8789d.css",
+    "static/js/main.b2044d0e.js"
+  ]
+}

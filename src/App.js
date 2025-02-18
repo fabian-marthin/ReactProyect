@@ -40,7 +40,7 @@ function App() {
   const checkItems = (text) => {
     const newItems = [...items];
     const itemIndex = newItems.findIndex(
-      (item) => item.texto == text
+      (item) => item.texto === text
     );
     switch (newItems[itemIndex].completado) {
       case false:
@@ -49,6 +49,8 @@ function App() {
       case true:
         newItems[itemIndex].completado = false;
       break;
+      default:
+        console.warn("Error");
     }
     const pasarAString = JSON.stringify(newItems);
     localStorage.setItem("Items_v1", pasarAString);
@@ -58,7 +60,7 @@ function App() {
   const deleteItem = (text) => {
     const newItems = [...items];
     const itemIndex = newItems.findIndex(
-      (item) => item.texto == text
+      (item) => item.texto === text
     );
     newItems.splice(itemIndex, 1);
     const pasarAString = JSON.stringify(newItems);
